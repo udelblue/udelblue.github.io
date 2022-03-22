@@ -1,6 +1,5 @@
 ## AWS General datalake
 
-Below is a generalized informal diagram of a teired datalake. 
-
+Below is a generalized informal diagram of a tiered datalake. The left most portion highlights the ingestion layer. In this instance airflow was used. Keep in mind, glue is an excellent alternate. After that there are three separate layers of buckets each denoting the level of processing that has occurred on the data. First we have the bronze layer (Raw data). Then we have the silver layer (processed data). Followed by the final and presentation ready data the gold layer (presentation data). The data is indexed by glue webcrawlers/data catalog. The data catalog as a meta data management for the datalake. All access to the datalake is controlled by Lake formation. This is denoted by the upper green square. This allow fine grain access to repos with glue (down to the column level). Finally we have the presentation service. In this instance tableau was used.  
 
 ![Generalized data lake](https://raw.githubusercontent.com/udelblue/udelblue.github.io/main/images/datalake_general_informal.JPG)
