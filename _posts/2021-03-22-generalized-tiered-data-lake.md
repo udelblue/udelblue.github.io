@@ -1,5 +1,25 @@
 ## AWS general datalake architecture
 
-Below is a generalized informal diagram of a tiered datalake. The left most portion highlights the ingestion layer. In this instance airflow was used. Keep in mind, glue is an excellent alternate. After that there are three separate layers of buckets each denoting the level of processing that has occurred on the data. First we have the bronze layer (Raw data). Then we have the silver layer (processed data). Followed by the final and presentation ready data the gold layer (presentation data). The data is indexed by glue webcrawlers/data catalog. The data catalog as a meta data management for the datalake. All access to the datalake is controlled by Lake formation. This is denoted by the upper green square. This allow fine grain access to repos with glue (down to the column level). Finally we have the presentation service. In this instance tableau was used.  
+The data lake consists of several parts. The first part is the ingestion layer. The ingestion layer consists of two subparts. A batch and streaming pipelines. 
 
-![Generalized data lake](https://raw.githubusercontent.com/udelblue/udelblue.github.io/main/images/datalake_general_informal.JPG)
+Batch Pipeline: 
+Designed to take incoming pdfs via sftp. A boto3 script setup on a windows scheduler. Would run hourly and take pdfs from the sftp server processing them through amazon texttract to OCR the files. The results are set to the S3 bronze bucket.
+
+Streaming Pipeline:
+Designed to take streaming data. This is to take immunization data as json from the api gateway and push to a kinesis stream. The stream would place in the S3 bronze bucket. The data would have a file format of YYYY/MM/DD/[time].json
+
+Query and Indexing:
+Starting from the bottom the AWS glue service is a metadata store of the data in the Storage layer. A glue crawler would periodically scan and index the data in the buckets. The lake formation service would provide data governance. The would prevent PII or Hippa data from being accessed by unauthorized users. 
+Athena would take sql and query glue data catalog for pull the data from s3. 
+
+Storage: 
+Data at rest would reside here. The data would first go the bronze bucket (raw data) and move right to the Siver if processed and cleaned and then to the Gold bucket. 
+
+Processing and Compute:
+Since it was a large amount of data we used sagemaker juyper notebooks with pyspark to process, clean and transform the data. 
+
+Presentation:
+We used tableau to present dashboards. The dashboards would query Athena using a JDBC driver. The sql query was processed and return a result set of the data residing the Gold bucket. 
+
+
+![Generalized data lake](https://raw.githubusercontent.com/udelblue/udelblue.github.io/main/images/datalake.png)
