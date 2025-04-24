@@ -15,7 +15,7 @@ AI CLI is a commandline utility to batch process files through a openai model.
   
     This functionality allow uses to chain the output of a previous run as the input of the next run. In addition you can prepend a prompt. 
 
-![Example of Chaining Example](https://raw.githubusercontent.com/udelblue/udelblue.github.io/main/images/AICLI_example_output.png)
+![Example of Chaining Example](https://raw.githubusercontent.com/udelblue/udelblue.github.io/main/images/AICLI-Chaining_example.png)
 
 
 ### Link to project:
