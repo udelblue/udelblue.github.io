@@ -30,4 +30,4 @@ Tableau was used to present dashboards. The dashboards would query Athena using 
 
 <div></div>
 
-![PowerPoint](https://raw.githubusercontent.com/udelblue/udelblue.github.io/main/assets/Presentation.pptx)
+[PowerPoint](https://raw.githubusercontent.com/udelblue/udelblue.github.io/main/assets/Presentation.pptx)
