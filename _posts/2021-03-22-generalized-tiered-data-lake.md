@@ -28,3 +28,6 @@ Since it was a large amount of data we used sagemaker juyper notebooks with pysp
 ### Presentation:
 Tableau was used to present dashboards. The dashboards would query Athena using a JDBC driver. The SQL query once processed returned a result set of the data residing the Gold bucket. 
 
+<div></div>
+
+![PowerPoint](https://raw.githubusercontent.com/udelblue/udelblue.github.io/main/assets/Presentation.pptx)
