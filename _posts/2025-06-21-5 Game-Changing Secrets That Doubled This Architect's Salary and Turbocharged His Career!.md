@@ -46,4 +46,3 @@ Developing leadership skills allows you to lead larger teams—from 15 to 50 spe
 
 By embracing these five pieces of advice—focusing on transformation, building stakeholder relationships, mastering a niche, boosting business acumen, and developing leadership—you can significantly enhance your career as an architect, leading to greater impact, promotions, and a higher salary.
 
-If you're looking for more resources to kickstart your architecture career, the "Go Cloud Architects" channel offers free resources and a free architecture webinar to discuss roles, necessary skills, and answer your questions live.
