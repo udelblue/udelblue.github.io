@@ -1,4 +1,4 @@
-# Scrum Process Guide
+# Scrum Process Guide with Jira
 
 ## Project Setup
 - **Step 1** - Create or open your Scrum project
